@@ -1,0 +1,23 @@
+name: Checkout and build image
+
+on:
+    push:
+
+jobs:
+    build_and_push:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Build image
+              run: |
+                  docker build . \
+                        --tag ghcr.io/${{ github.repository }} \
+                        --label "org.opencontainers.image.source=https://github.com/${{ github.repository }}"
+
+            - name: Login to GitHub container registry
+              run: echo "${{ secrets.GH_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+
+            - name: Publish image to GitHub container registry
+              run: |
+                  docker push ghcr.io/${{ github.repository }}

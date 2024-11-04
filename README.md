@@ -31,3 +31,5 @@ docker exec -it nginx-certbot certbot --nginx
 
 + Use docker compose to start Odoo and nginx containers, check config file sample in conf/odoo.conf.template
 + Retrieve ssl certficate after those services are running
+
+4. Update retrieved ssl certificates to nginx config

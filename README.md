@@ -29,6 +29,9 @@ docker exec -it nginx-certbot certbot --nginx
 
 3. If you request ssl certificate for an Odoo site
 
+## Reference
+1. [Generate SSL for localhost](https://github.com/FiloSottile/mkcert)
+
 + Use docker compose to start Odoo and nginx containers, check config file sample in conf/odoo.conf.template
 + Retrieve ssl certficate after those services are running
 

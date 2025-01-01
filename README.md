@@ -35,4 +35,6 @@ docker exec -it nginx-certbot certbot --nginx
 4. Update retrieved ssl certificates to nginx config
 
 ## Reference
+
 1. [Generate SSL for localhost](https://github.com/FiloSottile/mkcert)
+1. [Renew Certbot SSL setup](https://eff-certbot.readthedocs.io/en/latest/using.html#setting-up-automated-renewal)
